@@ -1,0 +1,74 @@
+#root {
+  margin: 0 auto;
+  height: 100vh;
+} 
+
+@font-face {
+  font-family: Poppins;
+  src: url(/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(/fonts/Poppins-SemiBold.ttf) format('truetype');
+  font-weight: 500; 
+  font-style: normal; 
+}
+
+* {
+  font-family: Poppins;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.form-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: url(/img/background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*background: rgb(2,0,36);
+  background: linear-gradient(99deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 32%); */
+}
+
+.students-form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.students-form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  min-width: 600px;
+  border-radius: 10px;
+}
+
+#software-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.students-form label {
+  font-weight: 500; 
+}
+
+.students-form button {
+  background-color: #F28500 !important;
+  border: #F28500 !important;
+  border-radius: 15px;
+  padding: 8px;
+  margin-top: 8px;
+}
