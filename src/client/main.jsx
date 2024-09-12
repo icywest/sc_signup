@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import App from "./App";
 import Welcome from "./Welcome";
+import Students from "./Students";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,9 @@ const router = createBrowserRouter([
   }, {
     path: '/welcome',
     element: <Welcome/>
+  }, {
+    path: '/students',
+    element: <Students/>
   }
 ]);
 

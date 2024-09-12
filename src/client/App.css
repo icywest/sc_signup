@@ -127,3 +127,53 @@
 .welcome-main section button a {
   text-decoration: none;
 }
+
+/* Students */
+
+.students-main {
+  height: 100%;
+  width: 100%;
+  background: url(/img/background.png);
+  background-size: cover;
+}
+
+.students-table-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  max-height: 600px; 
+  overflow-y: auto; 
+}
+
+.students-table-container table {
+  background-color: rgba(245, 241, 241, 0.11); 
+  border-collapse: collapse; 
+  color: white;
+  border-radius: 20px;
+}
+
+.students-table-container th, 
+.students-table-container td {
+  background-color: transparent; 
+  border: 1px solid rgba(0, 0, 0, 0.2); 
+  color: white; 
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.students-table-container::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+}
+
+.students-table-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Background color of the scrollbar track */
+}
+
+.students-table-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+}
+
+.students-table-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5); /* Darker color when hovering over the scrollbar thumb */
+}
