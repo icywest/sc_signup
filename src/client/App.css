@@ -15,6 +15,13 @@
   font-style: normal; 
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url(/fonts/Poppins-Bold.ttf) format('truetype');
+  font-weight: 700; 
+  font-style: normal; 
+}
+
 * {
   font-family: Poppins;
   box-sizing: border-box;
@@ -71,4 +78,39 @@
   border-radius: 15px;
   padding: 8px;
   margin-top: 8px;
+}
+
+/*Welcome */
+
+.welcome-main {
+  height: 100%;
+  width: 100%;
+  background: url(/img/welcome_join.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+
+}
+
+.welcome-main section {
+  margin-bottom: 100px;
+  padding-left: 20px;
+}
+
+.welcome-main section button {
+  background-color: #e0e0e0e0;
+  border: #e0e0e0e0;
+  color: #4169e1;
+  font-weight: 700;
+  font-size: 25px;
+  border-radius: 40px;
+  padding: 10px;
+  width: 140px;
+}
+
+.welcome-main section button a {
+  text-decoration: none;
 }
