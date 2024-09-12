@@ -68,6 +68,19 @@
   align-items: center;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#software-logo img {
+  animation: rotate 3s linear infinite;
+}
+
 .students-form label {
   font-weight: 500; 
 }
@@ -85,7 +98,7 @@
 .welcome-main {
   height: 100%;
   width: 100%;
-  background: url(/img/welcome_join.png);
+  background: url(/img/welcome_join_hd.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
