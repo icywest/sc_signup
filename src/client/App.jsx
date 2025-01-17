@@ -20,11 +20,13 @@ function App() {
         },
         body: JSON.stringify(formData)
       })
-      const {thoughts} = await request.json()
-      console.log(thoughts)
-      setThoughts(thoughts)
 
-      navigate('/welcome');
+      const newStudent = await request.json();
+      const studentId = newStudent.student_created[0].id;
+      console.log(newStudent);
+      console.log(studentId);
+
+      navigate(`/comment/${studentId}`);
 
     } catch(e) {
       console.log(e)
