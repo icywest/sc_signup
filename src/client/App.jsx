@@ -7,8 +7,6 @@ import "./App.css";
 
 function App() {
   const {register, handleSubmit, formState:{errors}} = useForm({mode: "onChange"})
-  const [thoughts, setThoughts] = useState([]);
-  const [students, setStudents] = useState([]); 
   const navigate = useNavigate();
 
   function processErrors(errors) {}
@@ -61,10 +59,10 @@ function App() {
         </section>
 
           <section className="mb-3">
-            <label htmlFor="first_name" className="form-label">First Name: </label>
-            <input id="first_name" type="text" className="form-control" {...register("first_name", {
+            <label htmlFor="full_name" className="form-label">Full Name: </label>
+            <input id="full_name" type="text" className="form-control" {...register("full_name", {
               required: {
-                value: true,
+                value: false,
                 message: "This field is required"
               }
             })
@@ -73,23 +71,10 @@ function App() {
               <span>{errors.first_name&& errors.first_name.message}</span>
           </section>
           <section className="mb-3">
-            <label htmlFor="last_name" className="form-label">Last Name: </label>
-            <input id="last_name" type="text" className="form-control" {...register("last_name", {
-              required: {
-                value: true,
-                message: "This field is required"
-              }
-            })
-
-            } />
-              <span>{errors.first_name&& errors.last_name.message}</span>
-
-          </section>
-          <section className="mb-3">
             <label htmlFor="ku_id">KU ID: </label>
             <input id="ku_id" type="text" className="form-control" {...register("ku_id", {
               required: {
-                value: true,
+                value: false,
                 message: "This field is required"
               }
             })
@@ -106,7 +91,7 @@ function App() {
               className="form-control"
               {...register("phone_number", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "This field is required"
                 },
                 pattern: {
@@ -119,10 +104,34 @@ function App() {
           </section>
 
           <section className="mb-3">
-            <label htmlFor="class_status">Class Standing: </label>
-            <select id="class_status" className="form-select" {...register("class_status", {
+              <label htmlFor="ku_email" className="form-label">KU Email</label>
+              <input id="ku_email" type="text" className="form-control" {...register("ku_email", {
+                required: {
+                  value: false,
+                  message: "This field is required"
+                },
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@student\.keiseruniversity\.edu$/,
+                  message: "Please enter a valid KU email",
+                }
+              })} />
+          </section>
+
+          <section className="mb-3">
+            <label htmlFor="DOB" className="form-label">Date of Birth: </label>
+            <input id="DOB" type="date" className="form-control" {...register("DOB", {
               required: {
-                value: true,
+                value: false,
+                message: "This field is required"
+              }
+            })} />
+          </section>
+
+          <section className="mb-3">
+            <label htmlFor="class_status">Class Standing: </label>
+            <select id="class_status" className="form-select" {...register("class_standing", {
+              required: {
+                value: false,
                 message: "Please select your class standing"
               }
             })} placeholder="Select">

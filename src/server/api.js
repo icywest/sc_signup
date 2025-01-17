@@ -1,27 +1,22 @@
 import express from 'express';
-//import MYSQLThought from "./mysql-models/Thought.js"; //Mysql Thought model
 import Student from './mysql-models/Student.js';
+import Comment from './mysql-models/Comment.js';
 
 const api = express.Router({mergeParams: true});
 
-api.route("/student/:id?")
+api.route("/student")
 .get(async (req, res) => {
-    const students = await Student.findAll();
-    res.status(201);
-    res.json({
-        students
-    })
+
 })
 .post(async (req, res) => {
-
-
     const student = new Student({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
+        name: req.body.full_name,
         ku_id: req.body.ku_id,
         phone_number: req.body.phone_number,
-        class_status: req.body.class_status
-    })
+        ku_email: req.body.ku_email,
+        DOB: req.body.DOB,
+        class_standing: req.body.class_standing
+    });
 
     await student.save();
 
@@ -34,8 +29,6 @@ api.route("/student/:id?")
     })
 })
 
-// MySQL 
-// ------------------------------------------------------------------------------------------------
 api.route("/mysql/thoughts")
 .get(async (req, res, next) => {
     const thoughts = await MYSQLThought.findAll();

@@ -1,8 +1,8 @@
 import {Sequelize} from "sequelize";
 
-const connection = new Sequelize("softwareClub_members", "root", "", { //dbname, user, password
+const connection = new Sequelize("sc_members_s25", "root", "patrick18", { //dbname, user, password
     host: "localhost",
-    port: 3306,
+    port: 3307,
     dialect: "mysql"
 });
 
