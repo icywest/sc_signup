@@ -8,6 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import App from "./App";
 import Welcome from "./Welcome";
 import Students from "./Students";
+import Comment from "./Comment";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,9 @@ const router = createBrowserRouter([
   }, {
     path: '/students',
     element: <Students/>
+  }, {
+  path: '/comment/:student_id?',
+    element: <Comment/>
   }
 ]);
 

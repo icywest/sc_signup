@@ -20,14 +20,42 @@ api.route("/student")
 
     await student.save();
 
-    const students = await Student.findAll();
+    const student_created = await Student.findAll(({
+        where: {
+            id: student.id
+        }
+    }));
 
     res.status(201);
     res.json({
         msg: 'Student saved successfully',
-        students
+        student_created
     })
 })
+
+api.route("/comment/:student_id?")
+    .get(async (req, res) => {})
+    .post(async (req, res) => {
+        const studentId = req.params.student_id;
+        const comment = new Comment({
+            content: req.body.comment
+        })
+
+        await comment.save();
+
+        const student = await Student.findByPk(studentId);
+
+        await student.update({
+            comment_id: comment.id
+        })
+
+        const comments = await Comment.findAll();
+        res.status(201);
+        res.json({
+            msg: 'Comment saved successfully',
+            comments
+        })
+    })
 
 api.route("/mysql/thoughts")
 .get(async (req, res, next) => {
